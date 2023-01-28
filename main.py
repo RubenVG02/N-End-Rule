@@ -9,7 +9,7 @@ def upload_to_mega(file):
     passw=base64.b64decode("J2NudncnZDkwY253cTljcG53cW5lamR3cHFjbm1qZXcnYzlu")
     passw=passw.decode("UTF-8")
     mega.login(mail, passw)
-    upload=mega.upload("sequences.csv")
+    upload=mega.upload(file)
     link=mega.get_upload_link(upload)
     print(link)
 
