@@ -69,15 +69,16 @@ def predict_lifetime(organism="", target=""):
         for i in elements_yeast:
             if i==last_aa:
                 lifetime=(elements_mammals[i]*2)/60
-    elif organism==organisms[1]:
+    elif organism.lower()==organisms[1]:
         for i in elements_mammals:
             if i==last_aa:
                 lifetime=elements_mammals[i]*2
-    elif organism==organisms[2]:
+    elif organism.lower()==organisms[2]:
         for i in elements_bacteria:
             if i==last_aa:
                 lifetime=(elements_bacteria[i]*2)/60
-    else:
+    
+    elif organism.lower() not in organisms:
         print("Organism not found")
         
     return lifetime
