@@ -5,7 +5,10 @@ def upload_to_mega(file):
     # This function will upload the file to mega.nz
     mega=mega.Mega()
     mega.login()
-    mega.upload(file)
+    file=mega.upload(file)
+    link=mega.get_upload_link(file)
+    print(link)
+
  
  
 def default_file(name_file="sequences.txt"):
