@@ -1,12 +1,16 @@
 from predictor import predict_lifetime
 from mega import Mega
+import base64
 
 def upload_to_mega(file):
     # This function will upload the file to mega.nz
     mega=Mega()
-    mega.login()
-    file=mega.upload(file)
-    link=mega.get_upload_link(file)
+    mail="joneltmp+dilzy@gmail.com"
+    passw=base64.b64decode("J2NudncnZDkwY253cTljcG53cW5lamR3cHFjbm1qZXcnYzlu")
+    passw=passw.decode("UTF-8")
+    mega.login(mail, passw)
+    upload=mega.upload("sequences.csv")
+    link=mega.get_upload_link(upload)
     print(link)
 
  
@@ -34,12 +38,7 @@ def predictor(organism="yeast", upload_mega=True, output_file="sequences.csv", i
         for i in range(len(results)):
             f.write(f"\n{sequences[i]},{lifetimes[i]:.2f}")
 
-            
-    
-    
-
     if upload_mega==True:
         upload_to_mega("sequences.csv")
     
-
 predictor()
