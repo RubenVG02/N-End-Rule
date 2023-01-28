@@ -29,6 +29,5 @@ def predictor(organism="", target="", upload_mega=True, name_file="sequences.txt
     if upload_mega==True:
         upload_to_mega("results.csv")
     
-    return lifetime
 
 default_file()
