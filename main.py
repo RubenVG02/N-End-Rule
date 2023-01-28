@@ -5,9 +5,10 @@ import base64
 def upload_to_mega(file):
     # This function will upload the file to mega.nz
     mega=Mega()
-    mail="joneltmp+dilzy@gmail.com"
-    passw=base64.b64decode("J2NudncnZDkwY253cTljcG53cW5lamR3cHFjbm1qZXcnYzlu")
+    mail=""
+    #passw=base64.b64decode("J2NudncnZDkwY253cTljcG53cW5lamR3cHFjbm1qZXcnYzlu")
     passw=passw.decode("UTF-8")
+    passw=""
     mega.login(mail, passw)
     upload=mega.upload(file)
     link=mega.get_upload_link(upload)
