@@ -80,7 +80,7 @@ def predict_lifetime(organism="", target=""):
     else:
         print("Organism not found")
         
-    print(f"The predicted lifetime of the protein is: {lifetime} hours")
+    return lifetime
     
 
 predict_lifetime("yeast","SWDEFVDRSVQLFRADPESTRYVMKYRHCDGKLVLKVTDNKECLKFKTDQAQEAKKMEKLNNIFFTLM")
