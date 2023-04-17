@@ -2,14 +2,17 @@ from predictor import predict_lifetime
 from mega import Mega
 import base64
 
-def upload_to_mega(file):
-    # This function will upload the file to mega.nz
+def upload_to_mega(file, email="email", password="password"):
+    '''
+    Function to upload a file to mega.nz and get the link to download it
+
+    Parameters:
+    -file (str): Name of the file to upload
+    -email (str): Email of the mega.nz account
+    -password (str): Password of the mega.nz account
+    '''
     mega=Mega()
-    mail=""
-    #passw=base64.b64decode("J2NudncnZDkwY253cTljcG53cW5lamR3cHFjbm1qZXcnYzlu")
-    passw=passw.decode("UTF-8")
-    passw=""
-    mega.login(mail, passw)
+    mega.login(email, password)
     upload=mega.upload(file)
     link=mega.get_upload_link(upload)
     print(link)
@@ -26,13 +29,13 @@ def default_file(output_file="sequences.csv"):
     with open(output_file,"w") as file:
         file.write("sequence,lifetime(hours)") 
 
-def predictor(organism="yeast", upload_mega=True, output_file="sequences.csv", input_file="input.txt"):
+def predictor(organism="yeast", upload_mega=False, output_file="sequences.csv", input_file="input.txt"):
     '''
     Function to predict the lifetime of a sequence of a given organism and save the results in a csv file
 
     Parameters:
     -organism (str): Name of the organism. Example: yeast
-    -upload_mega (bool): If True, the file will be uploaded to mega.nz. Default: True
+    -upload_mega (bool): If True, the file will be uploaded to mega.nz. Default: False
     -output_file (str): Name of the output file. Default: sequences.csv
     -input_file (str): Name of the input file. Default: input.txt
     

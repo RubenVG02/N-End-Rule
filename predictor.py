@@ -1,63 +1,63 @@
-elements_yeast={"M":1200,
-                   "G":1200,
-                   "A":1200,
-                   "S":1200,
-                   "T":1200,
-                   "V":1200,
-                   "P":1200,
-                   "I":30,
-                   "E":30,
-                   "Y":10,
-                   "Q":10,
-                   "L":3,
-                   "F":3,
-                   "D":3,
-                   "K":3,
-                   "R":2}
+elements_yeast={"M":1200, #Methionine
+                   "G":1200, #Glycine
+                   "A":1200, #Alanine
+                   "S":1200, #Serine
+                   "T":1200, #Threonine
+                   "V":1200, #Valine
+                   "P":1200, #Proline
+                   "I":30, #Isoleucine
+                   "E":30, #Glutamic acid
+                   "Y":10, #Tyrosine
+                   "Q":10, #Glutamine
+                   "L":3, #Leucine
+                   "F":3, #Phenylalanine
+                   "D":3, #Aspartic acid
+                   "K":3, #Lysine
+                   "R":2} #Arginine
 
-elements_mammals={"M":30,
-                   "G":30,
-                   "A":4.4,
-                   "S":1200,
-                   "T":7.2,
-                   "V":100,
-                   "P":20,
-                   "I":20,
-                   "E":1,
-                   "Y":2.8,
-                   "Q":10,
-                   "L":5.5,
-                   "F":1.1,
-                   "D":1.1,
-                   "K":1.3,
-                   "R":1,
-                   "H":3.5,
-                   "W":2.8,
-                   "S":1.9,
-                   "N":1.4,
-                   "C":1.2,
-                   "Q":0.8}
+elements_mammals={"M":30, #Methionine
+                   "G":30, #Glycine
+                   "A":4.4, #Alanine
+                   "S":1200, #Serine
+                   "T":7.2, #Threonine
+                   "V":100, #Valine
+                   "P":20, #Proline
+                   "I":20, #Isoleucine
+                   "E":1, #Glutamic acid
+                   "Y":2.8, #Tyrosine
+                   "Q":10, #Glutamine
+                   "L":5.5, #Leucine
+                   "F":1.1, #Phenylalanine
+                   "D":1.1, #Aspartic acid
+                   "K":1.3, #Lysine
+                   "R":1, #Arginine
+                   "H":3.5, #Histidine
+                   "W":2.8, #Tryptophan
+                   "S":1.9, #Serine
+                   "N":1.4, #Asparagine
+                   "C":1.2, #Cysteine
+                   "Q":0.8} #Glutamine
 
-elements_bacteria={"V":600,
-                   "M":600,
-                   "G":600,
-                   "P":600,
-                   "I":600,
-                   "T":600,
-                   "L":2,
-                   "A":600,
-                   "H":600,
-                   "W":2,
-                   "Y":2,
-                   "S":600,
-                   "N":600,
-                   "K":2,
-                   "C":600,
-                   "D":600,
-                   "F":2,
-                   "E":600,
-                   "R":2,
-                   "Q":600} 
+elements_bacteria={"V":600, #Valine
+                   "M":600, #Methionine
+                   "G":600, #Glycine
+                   "P":600, #Proline
+                   "I":600, #Isoleucine
+                   "T":600, #Threonine
+                   "L":2, #Leucine
+                   "A":600, #Alanine
+                   "H":600, #Histidine
+                   "W":2, #Tryptophan
+                   "Y":2, #Tyrosine
+                   "S":600, #Serine
+                   "N":600, #Asparagine
+                   "K":2, #Lysine
+                   "C":600, #Cysteine
+                   "D":600, #Aspartic acid
+                   "F":2, #Phenylalanine
+                   "E":600, #Glutamic acid
+                   "R":2, #Arginine
+                   "Q":600} #Glutamine
 
 def predict_lifetime(organism="", target=""):
     '''
@@ -68,8 +68,6 @@ def predict_lifetime(organism="", target=""):
     -target (str): Sequence of the protein to predict the lifetime in FASTA format. 
     
     '''
-
-
     organisms=["yeast","mammals","bacteria"]
     last_aa=target[-1]
     lifetime=0
@@ -88,7 +86,6 @@ def predict_lifetime(organism="", target=""):
     
     elif organism.lower() not in organisms:
         print("Organism not found")
-        
     return lifetime
     
 
