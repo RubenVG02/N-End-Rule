@@ -10,14 +10,20 @@ First of all, in order to make a good prediction, the proteins must be in FASTA 
 In order to make predictions using multiple FASTA files, you have to copy them in the "input.txt" file, one line per sequence. Then, execute the "main.py" script, and it will automatically create an csv file where you will have your results. There's an example on "sequences.csv". If you want to upload your results to Mega, you have to write a valid email and password in the "upload_to_mega" function in "main.py". With this function, you will obtain a link that redirects to your file.
 
 
+## Requirements
 
-
+- Python 3.8.5
+- Mega.py 1.0.10
 
 
 
 ## Authors
 
 - [@RubenVG02](https://www.github.com/RubenVG02)
+
+## Acknowledgements
+
+- [N-End Rule](https://en.wikipedia.org/wiki/N-end_rule) for the values of the half-lives of the proteins
 
 
 ## Features
