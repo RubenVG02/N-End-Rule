@@ -1,5 +1,3 @@
-
-
 elements_yeast={"M":1200,
                    "G":1200,
                    "A":1200,
@@ -62,6 +60,16 @@ elements_bacteria={"V":600,
                    "Q":600} 
 
 def predict_lifetime(organism="", target=""):
+    '''
+    Function to predict the lifetime of a sequence of a given organism and save the results in a csv file
+
+    Parameters:
+    -organism (str): Name of the organism. Example: yeast.
+    -target (str): Sequence of the protein to predict the lifetime in FASTA format. 
+    
+    '''
+
+
     organisms=["yeast","mammals","bacteria"]
     last_aa=target[-1]
     lifetime=0
